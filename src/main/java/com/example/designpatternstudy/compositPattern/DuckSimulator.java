@@ -1,6 +1,7 @@
 package com.example.designpatternstudy.compositPattern;
 
 public class DuckSimulator {
+
     public static void initDuckSimul(){
         DuckSimulator simulator = new DuckSimulator();
         simulator.simulate();
