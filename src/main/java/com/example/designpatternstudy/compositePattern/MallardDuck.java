@@ -1,4 +1,4 @@
-package com.example.designpatternstudy.compositPattern;
+package com.example.designpatternstudy.compositePattern;
 //청둥오리
 public class MallardDuck implements QuackableInterfaceForCompositePattern{
 

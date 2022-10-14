@@ -1,4 +1,4 @@
-package com.example.designpatternstudy.compositPattern;
+package com.example.designpatternstudy.compositePattern;
 // 거위 추가하기.
 public class Goose {
     public void honk(){

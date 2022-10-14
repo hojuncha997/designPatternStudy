@@ -1,4 +1,4 @@
-package com.example.designpatternstudy.compositPattern;
+package com.example.designpatternstudy.compositePattern;
 
 public class DuckCall implements QuackableInterfaceForCompositePattern{
     @Override

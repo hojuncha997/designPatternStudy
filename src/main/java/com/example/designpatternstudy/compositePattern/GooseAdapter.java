@@ -1,8 +1,5 @@
-package com.example.designpatternstudy.compositPattern;
+package com.example.designpatternstudy.compositePattern;
 //Goose를 DuckSimulator를 사용해 시뮬레이션 하기 위해 사용하는 어댑터
-
-import com.example.designpatternstudy.compositPattern.Goose;
-import com.example.designpatternstudy.compositPattern.QuackableInterfaceForCompositePattern;
 
 //어댑터 클래스에서는 타겟 인터페이스를 구현해야 한다.
 // 여기서는 QuackableInterfaceForCompositePattern이 타겟

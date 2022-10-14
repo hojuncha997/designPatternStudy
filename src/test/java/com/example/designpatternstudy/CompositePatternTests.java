@@ -1,6 +1,6 @@
 package com.example.designpatternstudy;
 
-import com.example.designpatternstudy.compositPattern.DuckSimulator;
+import com.example.designpatternstudy.compositePattern.DuckSimulator;
 import org.junit.jupiter.api.Test;
 
 public class CompositePatternTests {
