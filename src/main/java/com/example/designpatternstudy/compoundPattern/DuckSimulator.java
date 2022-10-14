@@ -1,6 +1,6 @@
 //DuckSimulator.java
 
-package com.example.designpatternstudy.compositePattern;
+package com.example.designpatternstudy.compoundPattern;
 
 public class DuckSimulator {
 
@@ -18,23 +18,23 @@ public class DuckSimulator {
         //인터페이스를 새로 생성할 때마다 새로운 데코레이터로 감싼다.
         //객체의 인터페이스를 직접 생성하지 않고 팩토리 메소드로 생성한다.
 
-        QuackableInterfaceForCompositePattern mallardDuck
+        QuackableInterfaceForCompoundPattern mallardDuck
                 = duckFactory.createMallardDuck();
 
-        QuackableInterfaceForCompositePattern redheadDuck
+        QuackableInterfaceForCompoundPattern redheadDuck
                 = duckFactory.createRedheadDuck();
 
-        QuackableInterfaceForCompositePattern duckCall
+        QuackableInterfaceForCompoundPattern duckCall
                 = duckFactory.createDuckCall();
 
-        QuackableInterfaceForCompositePattern rubberDuck
+        QuackableInterfaceForCompoundPattern rubberDuck
                 = duckFactory.createRubberDuck();
 
         //GooseAdapter를 사용해서 오리가 됨
-        QuackableInterfaceForCompositePattern gooseDuck = new GooseAdapter(new Goose());
+        QuackableInterfaceForCompoundPattern gooseDuck = new GooseAdapter(new Goose());
 
         //GooseAdapter오리도 데코레이터 사용
-//        QuackableInterfaceForCompositePattern gooseDuckDeco
+//        QuackableInterfaceForCompoundPattern gooseDuckDeco
 //                = new QuackCountingDecorator(new GooseAdapter(new Goose()));
 
 
@@ -53,8 +53,8 @@ public class DuckSimulator {
                 QuackCountingDecorator.getQuacks() + " 번");
 
     }
-    //데코레이터도 QuackableInterfaceForCompositePatter 인터페이스이다.
-    void simulate(QuackableInterfaceForCompositePattern duck){
+    //데코레이터도 QuackableInterfaceForCompoundPatter 인터페이스이다.
+    void simulate(QuackableInterfaceForCompoundPattern duck){
         duck.quack();
     }
 

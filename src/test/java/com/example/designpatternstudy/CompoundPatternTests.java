@@ -1,9 +1,9 @@
 package com.example.designpatternstudy;
 
-import com.example.designpatternstudy.compositePattern.DuckSimulator;
+import com.example.designpatternstudy.compoundPattern.DuckSimulator;
 import org.junit.jupiter.api.Test;
 
-public class CompositePatternTests {
+public class CompoundPatternTests {
 
 
     @Test
