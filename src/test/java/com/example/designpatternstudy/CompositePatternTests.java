@@ -32,6 +32,13 @@ public class CompositePatternTests {
         //꽉꽉
         //삑삑
 
+        //오리 시뮬레이션 게임 (+ 거위 어댑터)
+        //꽥꽥
+        //꽥꽥
+        //꽉꽉
+        //삑삑
+        //끽끽
+
 
     }
 
