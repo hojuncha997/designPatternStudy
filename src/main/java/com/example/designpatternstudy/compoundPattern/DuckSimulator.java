@@ -10,44 +10,49 @@ public class DuckSimulator {
         AbstractDuckFactory duckFactory = new CountingDuckFactory();
 
         //파라미터 추가
-        simulator.simulate(duckFactory);
+        simulator.simulateAll(duckFactory);
     }
 
     //파라미터 추가
-    void simulate(AbstractDuckFactory duckFactory){
-        //인터페이스를 새로 생성할 때마다 새로운 데코레이터로 감싼다.
-        //객체의 인터페이스를 직접 생성하지 않고 팩토리 메소드로 생성한다.
-
-        QuackableInterfaceForCompoundPattern mallardDuck
-                = duckFactory.createMallardDuck();
-
-        QuackableInterfaceForCompoundPattern redheadDuck
-                = duckFactory.createRedheadDuck();
-
-        QuackableInterfaceForCompoundPattern duckCall
-                = duckFactory.createDuckCall();
-
-        QuackableInterfaceForCompoundPattern rubberDuck
-                = duckFactory.createRubberDuck();
-
-        //GooseAdapter를 사용해서 오리가 됨
+    void simulateAll(AbstractDuckFactory duckFactory){
+        QuackableInterfaceForCompoundPattern redheadDuck = duckFactory.createRedheadDuck();
+        QuackableInterfaceForCompoundPattern duckCall = duckFactory.createDuckCall();
+        QuackableInterfaceForCompoundPattern rubberDuck = duckFactory.createRubberDuck();
         QuackableInterfaceForCompoundPattern gooseDuck = new GooseAdapter(new Goose());
 
-        //GooseAdapter오리도 데코레이터 사용
-//        QuackableInterfaceForCompoundPattern gooseDuckDeco
-//                = new QuackCountingDecorator(new GooseAdapter(new Goose()));
+
+        System.out.println("\n오리 시뮬레이션 게임: 무리 (+ 컴포지트)");
+
+        Flock flockOfDucks = new Flock();
+        flockOfDucks.add(redheadDuck);
+        flockOfDucks.add(duckCall);
+        flockOfDucks.add(rubberDuck);
+        flockOfDucks.add(gooseDuck);
 
 
+        //물오리만 들어가는 Flock객체(Composite객체) 생성
+        Flock flockOfMallards = new Flock();
 
-        System.out.println("\n오리 시뮬레이션 게임 (+ 추상 팩토리리)");
+        //개별 물오리(mallard) 생성
+        QuackableInterfaceForCompoundPattern mallardOne = duckFactory.createMallardDuck();
+        QuackableInterfaceForCompoundPattern mallardTwo = duckFactory.createMallardDuck();
+        QuackableInterfaceForCompoundPattern mallardThree = duckFactory.createMallardDuck();
+        QuackableInterfaceForCompoundPattern mallardFour = duckFactory.createMallardDuck();
 
-       simulate(mallardDuck); //1
-        simulate(redheadDuck); //2
-        simulate(duckCall); //3
-        simulate(rubberDuck); //4
-        //거위 시뮬레이트트
-       simulate(gooseDuck);
-//       simulate(gooseDuckDeco);//5
+        //개별 물오리를 컴포지트 객체에 추가하기
+        flockOfMallards.add(mallardOne);
+        flockOfMallards.add(mallardTwo);
+        flockOfMallards.add(mallardThree);
+        flockOfMallards.add(mallardFour);
+
+        //물오리 무리(flockOfMallards)를 아까 만든 오리 무리(flockOfDucks)에 넣는다.
+        flockOfDucks.add(flockOfMallards);
+
+        System.out.println("\n오리 시뮬레이션 게임: 전체 무리");
+        simulate(flockOfDucks);
+
+        System.out.println("\n오리 시뮬레이션 게임: 물오리 무리");
+        simulate(flockOfMallards);
 
         System.out.println("오리가 소리 낸 횟수:" +
                 QuackCountingDecorator.getQuacks() + " 번");
@@ -60,3 +65,22 @@ public class DuckSimulator {
 
 
 }
+//
+//오리 시뮬레이션 게임: 무리 (+ 컴포지트)
+//
+//오리 시뮬레이션 게임: 전체 무리
+//꽥꽥
+//꽉꽉
+//삑삑
+//끽끽
+//꽥꽥
+//꽥꽥
+//꽥꽥
+//꽥꽥
+//
+//오리 시뮬레이션 게임: 물오리 무리
+//꽥꽥
+//꽥꽥
+//꽥꽥
+//꽥꽥
+//오리가 소리 낸 횟수:11 번
