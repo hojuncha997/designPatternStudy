@@ -1,3 +1,5 @@
+//Observer.java
+
 package com.example.designpatternstudy.compoundPattern;
 
 public interface Observer {

@@ -1,3 +1,5 @@
+//Quackologist.java
+
 package com.example.designpatternstudy.compoundPattern;
 
 public class Quackologist implements Observer {

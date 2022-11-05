@@ -1,6 +1,6 @@
+//QuackObservable.java
+
 package com.example.designpatternstudy.compoundPattern;
-
-
 
 //개별 객체의 동작을 감시하고자 할 때 사용
 //여기서는 QuackableInterfaceForCompoundPattern을 의미한다.
