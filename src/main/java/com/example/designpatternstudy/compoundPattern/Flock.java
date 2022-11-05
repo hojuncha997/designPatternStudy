@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+
 //복합객체와 잎 원소에서 같은 인터페이스를 구현해야 한다.
 //여기서는 QuackableInterfaceForCompoundPattern이 잎 원소가 된다.
 public class Flock implements QuackableInterfaceForCompoundPattern {
@@ -32,6 +33,21 @@ public class Flock implements QuackableInterfaceForCompoundPattern {
             QuackableInterfaceForCompoundPattern quacker = iterator.next();
             quacker.quack();
         }
+
+    }
+
+    @Override
+    public void registerObserver(Observer observer) {
+        Iterator<QuackableInterfaceForCompoundPattern> iterator
+                = quackers.iterator();
+        while(iterator.hasNext()){
+            QuackableInterfaceForCompoundPattern quacker = iterator.next();
+            quacker.registerObserver(observer);
+        }
+    }
+
+    @Override
+    public void notifyObservers() {
 
     }
 }
